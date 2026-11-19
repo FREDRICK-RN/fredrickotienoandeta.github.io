@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fredrick Otieno Andeta, RN | Registered Nurse &amp; TVET Lecturer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0F2A44',
+                            light: '#1B3D5E',
+                            dark: '#091A2B'
+                        },
+                        teal: {
+                            DEFAULT: '#0D9488',
+                            light: '#14B8A6',
+                            dark: '#0F766E',
+                            soft: '#F0FDFA'
+                        },
+                        surface: '#F8FAFC',
+                        slateText: '#1E293B'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-slateText font-sans antialiased selection:bg-teal selection:text-white">
+
+    <!-- Toast Notification for Clipboard Actions -->
+    <div id="toast-notification" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-navy text-white px-5 py-3.5 rounded-2xl shadow-xl border border-white/15 flex items-center space-x-3">
+            <div class="w-7 h-7 rounded-full bg-teal flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-check text-xs text-white"></i>
+            </div>
+            <span id="toast-message" class="text-sm font-medium">Official bio copied to clipboard!</span>
+        </div>
+    </div>
+
+    <!-- Sticky Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Brand Identity -->
+                <a href="#about" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-navy text-white flex items-center justify-center font-serif font-bold text-base shadow-sm group-hover:bg-teal transition-colors">
+                        FA
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-navy text-sm sm:text-base block leading-tight">Fredrick Otieno Andeta, RN</span>
+                        <span class="text-xs text-slate-500 font-medium hidden sm:block">Registered Nurse &amp; TVET Lecturer</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-teal transition-colors">About</a>
+                    <a href="#pillars" class="hover:text-teal transition-colors">Core Pillars</a>
+                    <a href="#experience" class="hover:text-teal transition-colors">Experience</a>
+                    <a href="#competencies" class="hover:text-teal transition-colors">Competencies</a>
+                    <a href="#contact" class="px-4 py-2.5 rounded-xl bg-navy text-white hover:bg-teal transition-colors shadow-sm font-semibold">
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-navy hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-5 space-y-1.5 shadow-lg">
+            <a href="#about" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-teal-soft hover:text-teal">About</a>
+            <a href="#pillars" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-teal-soft hover:text-teal">Core Pillars</a>
+            <a href="#experience" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-teal-soft hover:text-teal">Experience</a>
+            <a href="#competencies" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-teal-soft hover:text-teal">Competencies</a>
+            <a href="#contact" class="mobile-link block px-3.5 py-3 mt-2 rounded-xl text-center text-base font-semibold bg-navy text-white hover:bg-teal">Contact</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="about" class="relative overflow-hidden bg-gradient-to-br from-navy via-navy to-navy-light text-white py-16 sm:py-24 lg:py-28">
+        <!-- Ambient decorative accents -->
+        <div class="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-teal/15 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-80 h-80 rounded-full bg-teal/10 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Column: Headline, Bio & CTAs -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-teal-light text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-teal-light animate-pulse"></span>
+                        <span>Registered Nurse (Active) &bull; TVET Lecturer</span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-tight text-white">
+                        Fredrick Otieno Andeta, <span class="text-teal-light">RN</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
+                        Registered Nurse and TVET Lecturer currently teaching and developing competency-based training materials for nursing and care assistant learners. Dedicated to practical mentorship, clinical readiness, and quality patient care.
+                    </p>
+
+                    <!-- Primary CTA Buttons -->
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-teal hover:bg-teal-light text-white font-semibold text-sm sm:text-base shadow-md transition-all">
+                            <i class="fa-regular fa-envelope mr-2.5"></i>
+                            Get in Touch
+                        </a>
+                        <button type="button" id="hero-copy-bio-btn" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-sm sm:text-base transition-all">
+                            <i class="fa-regular fa-copy mr-2.5"></i>
+                            Copy Official Bio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Academic & Clinical Snapshot Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <div class="flex items-center space-x-4 border-b border-white/15 pb-5">
+                            <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-teal flex items-center justify-center text-white text-xl shadow-inner shrink-0">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <div>
+                                <h2 class="font-serif font-bold text-lg text-white">Academic &amp; Clinical Snapshot</h2>
+                                <p class="text-xs text-slate-300 mt-0.5">Professional Credentials &amp; Standing</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 text-teal-light flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider text-slate-300 block font-medium">Licensure Status</span>
+                                    <span class="font-semibold text-white">Active RN Registration</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 text-teal-light flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider text-slate-300 block font-medium">Academic Appointment</span>
+                                    <span class="font-semibold text-white">Current TVET Lecturer (2026 – Present)</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 text-teal-light flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider text-slate-300 block font-medium">Qualification</span>
+                                    <span class="font-semibold text-white">Bachelor of Science in Nursing</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 text-teal-light flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider text-slate-300 block font-medium">Languages</span>
+                                    <span class="font-semibold text-white">English, Kiswahili, Luhya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Core Professional Pillars (3-Column Grid) -->
+    <section id="pillars" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <span class="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider">Areas of Focus</span>
+            <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy mt-2">Core Professional Pillars</h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                Bridging competency-based health education with evidence-based clinical practice.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Card 1: TVET Lecturing & Instruction -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-teal/40 transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-teal-soft text-teal flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-navy mb-3">TVET Lecturing &amp; Instruction</h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed flex-grow">
+                    Delivering structured, competency-based instruction for diploma and certificate health science learners, fostering practical readiness, critical thinking, and professional ethics.
+                </p>
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-teal flex items-center">
+                    <i class="fa-solid fa-check-circle mr-2"></i> Diploma &amp; Certificate Health Programs
+                </div>
+            </div>
+
+            <!-- Card 2: Curriculum & Assessment Design -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-teal/40 transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-navy/5 text-navy flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-book-medical"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-navy mb-3">Curriculum &amp; Assessment Design</h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed flex-grow">
+                    Developing TVET CDACC-aligned study notes, practical clinical logbooks, and standardized assessments tailored to measure hands-on clinical competence objectively.
+                </p>
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-navy flex items-center">
+                    <i class="fa-solid fa-check-circle mr-2"></i> TVET CDACC-Aligned Materials
+                </div>
+            </div>
+
+            <!-- Card 3: Clinical Nursing Practice -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-teal/40 transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-teal-soft text-teal flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-navy mb-3">Clinical Nursing Practice</h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed flex-grow">
+                    Hands-on patient care across outpatient, maternal &amp; child health, medical-surgical, reproductive health, and mental health settings with a commitment to patient safety.
+                </p>
+                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-teal flex items-center">
+                    <i class="fa-solid fa-check-circle mr-2"></i> Multidisciplinary Clinical Care
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Professional & Clinical Experience Timeline -->
+    <section id="experience" class="py-16 sm:py-24 bg-white border-y border-slate-200/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <span class="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider">Career &amp; Clinical Background</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy mt-2">Professional &amp; Clinical Experience</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Progressive clinical practice and academic instruction across hospital, community, and TVET institutions.
+                </p>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative border-l-2 border-teal/30 ml-3 sm:ml-6 space-y-9">
+
+                <!-- Role 1: 2026 – Present -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal ring-4 ring-teal-soft"></span>
+                    <div class="bg-surface rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2.5">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-teal text-white w-fit">
+                                2026 – Present
+                            </span>
+                            <span class="text-xs font-semibold text-teal-dark uppercase tracking-wide">Current Position</span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy">TVET Lecturer (Health Sciences)</h3>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                            Lecturing health science learners and developing competency-based training materials, practical logbooks, and assessments to prepare nursing and care assistant trainees for clinical service delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Role 2: May 2026 – July 2026 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy ring-4 ring-slate-100"></span>
+                    <div class="bg-surface rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2.5">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-navy/10 text-navy w-fit">
+                                May 2026 – July 2026
+                            </span>
+                            <span class="text-xs font-medium text-slate-500">Clinical Internship</span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy">Clinical Nursing Intern &mdash; Gichuru Dispensary</h3>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                            Provided comprehensive mother-child healthcare across outpatient, antenatal, postnatal, family planning, and CCC departments.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700">Outpatient (OPD)</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700">Antenatal (ANC)</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700">Postnatal (PNC)</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700">Family Planning</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700">CCC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3: March 2026 – April 2026 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy ring-4 ring-slate-100"></span>
+                    <div class="bg-surface rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2.5">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-navy/10 text-navy w-fit">
+                                March 2026 – April 2026
+                            </span>
+                            <span class="text-xs font-medium text-slate-500">Clinical Education</span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy">Clinical Teaching Rotation</h3>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                            Delivered structured clinical instruction and student mentorship during internship, guiding learners through bedside procedures, clinical reasoning, and patient communication.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Role 4: 2021 – 2023 -->
+                <div class="relative pl-7 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy ring-4 ring-slate-100"></span>
+                    <div class="bg-surface rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2.5">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-navy/10 text-navy w-fit">
+                                2021 – 2023
+                            </span>
+                            <span class="text-xs font-medium text-slate-500">BScN Clinical Placements</span>
+                        </div>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy">Undergraduate Clinical Rotations</h3>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                            Completed comprehensive multidisciplinary hospital and community rotations across major healthcare facilities:
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                                <h4 class="font-serif font-bold text-sm text-navy">Embu Level 5 Hospital</h4>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Specialized Clinical Rotations, Ward Management &amp; Teaching; Mental Health; Reproductive Health &amp; Midwifery.
+                                </p>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                                <h4 class="font-serif font-bold text-sm text-navy">Tudor Subcounty Hospital, Mombasa</h4>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Mother &amp; Child Healthcare and Community Diagnosis.
+                                </p>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                                <h4 class="font-serif font-bold text-sm text-navy">Coast Provincial Hospital</h4>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Adult Medical-Surgical Nursing care and acute inpatient management.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Key Competencies & Languages Section -->
+    <section id="competencies" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            <!-- Filterable Competencies Column -->
+            <div class="lg:col-span-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <span class="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider">Core Capabilities</span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy mt-1">Key Competencies</h2>
+                    </div>
+
+                    <!-- Interactive Category Filter -->
+                    <div class="inline-flex rounded-xl bg-slate-200/70 p-1 text-xs font-semibold self-start">
+                        <button type="button" data-filter="all" class="comp-filter-btn px-3.5 py-2 rounded-lg bg-white text-navy shadow-sm transition-all">
+                            All
+                        </button>
+                        <button type="button" data-filter="clinical" class="comp-filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-navy transition-all">
+                            Clinical
+                        </button>
+                        <button type="button" data-filter="academic" class="comp-filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-navy transition-all">
+                            Academic &amp; Leadership
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Competency Cards Grid -->
+                <div id="competencies-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Clinical Competencies -->
+                    <div data-category="clinical" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-teal-soft text-teal flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal">Clinical</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Maternal &amp; Child Health</h3>
+                            <p class="text-xs text-slate-600 mt-1">Antenatal, postnatal, immunization, and child wellness care delivery.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="clinical" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-teal-soft text-teal flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-house-medical"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal">Clinical</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Outpatient &amp; Primary Care</h3>
+                            <p class="text-xs text-slate-600 mt-1">Triage, patient assessment, health education, and chronic care follow-up.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="clinical" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-teal-soft text-teal flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-bed-pulse"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal">Clinical</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Medical-Surgical Nursing</h3>
+                            <p class="text-xs text-slate-600 mt-1">Comprehensive adult inpatient management, perioperative care, and recovery.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="clinical" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-teal-soft text-teal flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal">Clinical</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Mental Health Nursing</h3>
+                            <p class="text-xs text-slate-600 mt-1">Compassionate psychiatric nursing assessment, psychosocial support, and safety.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="clinical" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-teal-soft text-teal flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-person-pregnant"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-teal">Clinical</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Reproductive Health &amp; Midwifery</h3>
+                            <p class="text-xs text-slate-600 mt-1">Family planning counseling, maternal care, and safe midwifery practices.</p>
+                        </div>
+                    </div>
+
+                    <!-- Academic & Leadership Skills -->
+                    <div data-category="academic" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-navy/10 text-navy flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-navy">Academic &amp; Leadership</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">CBET Curriculum Development</h3>
+                            <p class="text-xs text-slate-600 mt-1">Structuring competency-based modules and study notes aligned with TVET standards.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="academic" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-navy/10 text-navy flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-navy">Academic &amp; Leadership</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Practical Logbook Design</h3>
+                            <p class="text-xs text-slate-600 mt-1">Designing clinical skills checklists and trainee logbooks for healthcare placements.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="academic" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-navy/10 text-navy flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-navy">Academic &amp; Leadership</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Standardized Assessment Creation</h3>
+                            <p class="text-xs text-slate-600 mt-1">Authoring theory examinations, practical rubrics, and objective marking schemes.</p>
+                        </div>
+                    </div>
+
+                    <div data-category="academic" class="comp-card bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start space-x-3.5 sm:col-span-2 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-navy/10 text-navy flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-navy">Academic &amp; Leadership</span>
+                            <h3 class="font-bold text-navy text-sm sm:text-base">Clinical Mentorship &amp; Supervision</h3>
+                            <p class="text-xs text-slate-600 mt-1">Guiding nursing and care assistant learners in clinical rotations and ward management responsibilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages Card Column -->
+            <div class="lg:col-span-4">
+                <div class="bg-navy text-white rounded-2xl p-7 shadow-md sticky top-28">
+                    <div class="w-11 h-11 rounded-xl bg-white/10 text-teal-light flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold">Languages</h3>
+                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                        Clear, empathetic communication across academic lecture halls, clinical teams, and patient communities.
+                    </p>
+
+                    <div class="mt-6 space-y-3.5">
+                        <div class="bg-white/10 rounded-xl p-3.5 flex items-center justify-between border border-white/10">
+                            <span class="font-semibold text-sm">English</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-teal text-white font-medium">Fluent</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-3.5 flex items-center justify-between border border-white/10">
+                            <span class="font-semibold text-sm">Kiswahili</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-teal text-white font-medium">Fluent</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-3.5 flex items-center justify-between border border-white/10">
+                            <span class="font-semibold text-sm">Luhya</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-teal text-white font-medium">Fluent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Official Page Bio & Contact Section -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-100/90 border-t border-slate-200/90">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                <!-- Left Column: Ready-to-Use Official Bio Box -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider">Official Profile Copy</span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy mt-2">Official Page Bio</h2>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2">
+                            Copy a verified professional biography for institutional profiles, academic directories, or speaking introductions.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                        <!-- Bio Format Toggle -->
+                        <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-semibold">
+                            <button type="button" data-bio="standard" class="bio-tab flex-1 py-2 px-3 rounded-lg bg-white text-navy shadow-sm transition-all">
+                                Standard Bio
+                            </button>
+                            <button type="button" data-bio="short" class="bio-tab flex-1 py-2 px-3 rounded-lg text-slate-600 hover:text-navy transition-all">
+                                Short Bio (&lt;150 chars)
+                            </button>
+                        </div>
+
+                        <!-- Bio Display Box -->
+                        <div class="bg-surface rounded-xl p-4 sm:p-5 border border-slate-200/80 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-navy uppercase tracking-wide">Fredrick Otieno Andeta, RN</span>
+                                <span id="bio-char-count" class="text-[11px] font-medium text-slate-400"></span>
+                            </div>
+                            <p id="official-bio-text" class="text-sm text-slate-700 leading-relaxed">
+                                Registered Nurse and TVET Lecturer currently teaching and developing competency-based training materials for nursing and care assistant learners. Dedicated to practical mentorship, clinical readiness, and quality patient care.
+                            </p>
+                        </div>
+
+                        <!-- One-Click Copy Button -->
+                        <button type="button" id="copy-bio-btn" class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-navy hover:bg-teal text-white font-semibold text-sm transition-colors shadow-sm">
+                            <i class="fa-regular fa-copy mr-2"></i>
+                            Copy Bio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Institutional / Professional Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-sm">
+                        <span class="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider">Direct Inquiry</span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy mt-1">Get in Touch</h2>
+                        <p class="text-slate-600 text-sm sm:text-base mt-2 mb-6">
+                            Connect regarding TVET lecturing appointments, competency-based curriculum and logbook development, or clinical mentorship.
+                        </p>
+
+                        <!-- Instant Confirmation Message Box (Hidden by default) -->
+                        <div id="form-confirmation" class="hidden mb-6 p-6 rounded-2xl bg-teal-soft border border-teal/30 text-navy space-y-3">
+                            <div class="flex items-center space-x-3 text-teal-dark font-serif font-bold text-base sm:text-lg">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                                <span>Message Sent Successfully</span>
+                            </div>
+                            <p id="confirmation-details" class="text-sm text-slate-700 leading-relaxed"></p>
+                            <button type="button" id="reset-form-btn" class="inline-flex items-center text-xs font-semibold text-teal-dark hover:underline pt-1">
+                                Send another inquiry &rarr;
+                            </button>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="contact-form" novalidate class="space-y-4 sm:space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                <div>
+                                    <label for="sender-name" class="block text-sm font-semibold text-navy mb-1.5">Name <span class="text-teal">*</span></label>
+                                    <input type="text" id="sender-name" name="name" placeholder="Your full name"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-slateText placeholder-slate-400 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all">
+                                    <p id="error-name" class="hidden text-xs text-red-600 font-medium mt-1">Please enter your full name.</p>
+                                </div>
+                                <div>
+                                    <label for="sender-org" class="block text-sm font-semibold text-navy mb-1.5">Organization / Institution <span class="text-teal">*</span></label>
+                                    <input type="text" id="sender-org" name="organization" placeholder="Institution or health facility"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-slateText placeholder-slate-400 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all">
+                                    <p id="error-org" class="hidden text-xs text-red-600 font-medium mt-1">Please enter your organization or institution.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="sender-subject" class="block text-sm font-semibold text-navy mb-1.5">Subject <span class="text-teal">*</span></label>
+                                <input type="text" id="sender-subject" name="subject" placeholder="e.g., TVET Lecturing / Curriculum & Logbook Development"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-slateText placeholder-slate-400 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all">
+                                <p id="error-subject" class="hidden text-xs text-red-600 font-medium mt-1">Please enter a subject for your inquiry.</p>
+                            </div>
+
+                            <div>
+                                <label for="sender-message" class="block text-sm font-semibold text-navy mb-1.5">Message <span class="text-teal">*</span></label>
+                                <textarea id="sender-message" name="message" rows="4" placeholder="Write your message or inquiry details here..."
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-slateText placeholder-slate-400 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all"></textarea>
+                                <p id="error-message" class="hidden text-xs text-red-600 font-medium mt-1">Please enter a brief message (at least 10 characters).</p>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-teal hover:bg-teal-dark text-white font-semibold text-sm sm:text-base shadow-sm transition-all">
+                                <i class="fa-solid fa-paper-plane mr-2.5"></i>
+                                Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-slate-300 py-10 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-serif font-bold text-white text-base">Fredrick Otieno Andeta, RN</p>
+                <p class="text-xs text-slate-400 mt-1">Registered Nurse &amp; TVET Lecturer</p>
+            </div>
+            <div class="text-xs text-slate-400">
+                &copy; 2026 Fredrick Otieno Andeta, RN. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Toast Notification Helper
+            const toastEl = document.getElementById('toast-notification');
+            const toastMessageEl = document.getElementById('toast-message');
+            let toastTimeout;
+
+            function showToast(message) {
+                toastMessageEl.textContent = message;
+                toastEl.classList.remove('translate-y-24', 'opacity-0');
+                toastEl.classList.add('translate-y-0', 'opacity-100');
+
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toastEl.classList.remove('translate-y-0', 'opacity-100');
+                    toastEl.classList.add('translate-y-24', 'opacity-0');
+                }, 3200);
+            }
+
+            // Clipboard Copy Helper (using textarea + execCommand for reliable iframe support)
+            function copyTextToClipboard(text, confirmationMsg) {
+                const tempTextarea = document.createElement('textarea');
+                tempTextarea.value = text;
+                tempTextarea.setAttribute('readonly', '');
+                tempTextarea.style.position = 'absolute';
+                tempTextarea.style.left = '-9999px';
+                document.body.appendChild(tempTextarea);
+                tempTextarea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast(confirmationMsg);
+                } catch (err) {
+                    console.error('Unable to copy text:', err);
+                }
+                document.body.removeChild(tempTextarea);
+            }
+
+            // Official Bio Texts (Standard & Short < 150 chars)
+            const bioVariants = {
+                standard: "Registered Nurse and TVET Lecturer currently teaching and developing competency-based training materials for nursing and care assistant learners. Dedicated to practical mentorship, clinical readiness, and quality patient care.",
+                short: "Registered Nurse and TVET Lecturer focused on quality patient care, competency-based health education, and practical clinical training."
+            };
+
+            const bioTabs = document.querySelectorAll('.bio-tab');
+            const bioTextEl = document.getElementById('official-bio-text');
+            const bioCharCountEl = document.getElementById('bio-char-count');
+            const copyBioBtn = document.getElementById('copy-bio-btn');
+            const heroCopyBioBtn = document.getElementById('hero-copy-bio-btn');
+
+            function updateCharCount(text) {
+                bioCharCountEl.textContent = `${text.length} chars`;
+            }
+            updateCharCount(bioVariants.standard);
+
+            bioTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    bioTabs.forEach(t => {
+                        t.classList.remove('bg-white', 'text-navy', 'shadow-sm');
+                        t.classList.add('text-slate-600');
+                    });
+                    tab.classList.add('bg-white', 'text-navy', 'shadow-sm');
+                    tab.classList.remove('text-slate-600');
+
+                    const type = tab.getAttribute('data-bio');
+                    bioTextEl.textContent = bioVariants[type];
+                    updateCharCount(bioVariants[type]);
+                });
+            });
+
+            copyBioBtn.addEventListener('click', () => {
+                copyTextToClipboard(bioTextEl.textContent.trim(), 'Official bio copied to clipboard!');
+            });
+
+            heroCopyBioBtn.addEventListener('click', () => {
+                copyTextToClipboard(bioVariants.standard, 'Official bio copied to clipboard!');
+            });
+
+            // Interactive Competencies Filter
+            const filterButtons = document.querySelectorAll('.comp-filter-btn');
+            const competencyCards = document.querySelectorAll('.comp-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => {
+                        b.classList.remove('bg-white', 'text-navy', 'shadow-sm');
+                        b.classList.add('text-slate-600');
+                    });
+                    btn.classList.add('bg-white', 'text-navy', 'shadow-sm');
+                    btn.classList.remove('text-slate-600');
+
+                    const selectedFilter = btn.getAttribute('data-filter');
+
+                    competencyCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (selectedFilter === 'all' || category === selectedFilter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Contact Form Validation & Instant Confirmation
+            const contactForm = document.getElementById('contact-form');
+            const formConfirmation = document.getElementById('form-confirmation');
+            const confirmationDetails = document.getElementById('confirmation-details');
+            const resetFormBtn = document.getElementById('reset-form-btn');
+
+            const nameInput = document.getElementById('sender-name');
+            const orgInput = document.getElementById('sender-org');
+            const subjectInput = document.getElementById('sender-subject');
+            const messageInput = document.getElementById('sender-message');
+
+            const errorName = document.getElementById('error-name');
+            const errorOrg = document.getElementById('error-org');
+            const errorSubject = document.getElementById('error-subject');
+            const errorMessage = document.getElementById('error-message');
+
+            function setFieldError(inputEl, errorEl, hasError) {
+                if (hasError) {
+                    inputEl.classList.add('border-red-500', 'focus:border-red-500');
+                    inputEl.classList.remove('border-slate-300', 'focus:border-teal');
+                    errorEl.classList.remove('hidden');
+                } else {
+                    inputEl.classList.remove('border-red-500', 'focus:border-red-500');
+                    inputEl.classList.add('border-slate-300', 'focus:border-teal');
+                    errorEl.classList.add('hidden');
+                }
+            }
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nameVal = nameInput.value.trim();
+                const orgVal = orgInput.value.trim();
+                const subjectVal = subjectInput.value.trim();
+                const messageVal = messageInput.value.trim();
+
+                const isNameInvalid = nameVal.length < 2;
+                const isOrgInvalid = orgVal.length < 2;
+                const isSubjectInvalid = subjectVal.length < 3;
+                const isMessageInvalid = messageVal.length < 10;
+
+                setFieldError(nameInput, errorName, isNameInvalid);
+                setFieldError(orgInput, errorOrg, isOrgInvalid);
+                setFieldError(subjectInput, errorSubject, isSubjectInvalid);
+                setFieldError(messageInput, errorMessage, isMessageInvalid);
+
+                if (isNameInvalid || isOrgInvalid || isSubjectInvalid || isMessageInvalid) {
+                    return;
+                }
+
+                confirmationDetails.textContent = `Thank you, ${nameVal} (${orgVal}). Your inquiry regarding "${subjectVal}" has been recorded for Fredrick Otieno Andeta, RN.`;
+
+                contactForm.classList.add('hidden');
+                formConfirmation.classList.remove('hidden');
+                showToast('Inquiry submitted successfully!');
+            });
+
+            resetFormBtn.addEventListener('click', () => {
+                contactForm.reset();
+                setFieldError(nameInput, errorName, false);
+                setFieldError(orgInput, errorOrg, false);
+                setFieldError(subjectInput, errorSubject, false);
+                setFieldError(messageInput, errorMessage, false);
+                formConfirmation.classList.add('hidden');
+                contactForm.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
